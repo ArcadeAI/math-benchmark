@@ -1,0 +1,12 @@
+[project]
+name = "math-benchmark"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arcade-ai>=1.1.2",
+    "numpy>=2.2.4",
+    "python-dotenv>=1.0.1",
+    "seaborn>=0.13.2",
+]
