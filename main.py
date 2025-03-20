@@ -23,7 +23,7 @@ MODEL_NAME = "gpt-3.5-turbo"
 
 client = openai.OpenAI(
     api_key=os.environ["ARCADE_API_KEY"],
-    base_url="http://localhost:9099/v1",
+    base_url="http://api.arcade.dev/v1",
 )
 
 # Define the checkpoint file path
