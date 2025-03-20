@@ -122,8 +122,7 @@ def write_results_to_file(accuracy_matrix):
         "timestamp": datetime.now().strftime("%Y-%m-%d_%H-%M-%S"),
     }
     filename = (
-        f"results_{MODEL_NAME}_{
-            datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
+        f"results_{MODEL_NAME}_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.json"
     )
     with open(filename, "w") as json_file:
         json.dump(output_dict, json_file, indent=4)
@@ -179,8 +178,7 @@ for i in range(MIN_DIGITS, MAX_DIGITS + 1):
         for trial in range(completed_trials, NUM_TRIALS):
             n1 = get_random_number(i)
             n2 = get_random_number(j)
-            print(
-                f"Trial {trial + 1} of {NUM_TRIALS} for {i}x{j}: {n1} x {n2}")
+            print(f"Trial {trial + 1} of {NUM_TRIALS} for {i}x{j}: {n1} x {n2}")
 
             true_product = n1 * n2
             response_text = query_model_for_product(n1, n2)
@@ -193,8 +191,7 @@ for i in range(MIN_DIGITS, MAX_DIGITS + 1):
                         correct_count += 1
                     else:
                         print(
-                            f"Model product {model_product} does not match true product {
-                                true_product}"
+                            f"Model product {model_product} does not match true product {true_product}"
                         )
                 except ValueError:
                     print(f"Could not parse {parsed_answer} as an integer")
@@ -206,8 +203,7 @@ for i in range(MIN_DIGITS, MAX_DIGITS + 1):
             checkpoint["progress"][str(i)][pair_key]["completed_trials"] = (
                 completed_trials
             )
-            checkpoint["progress"][str(
-                i)][pair_key]["correct_count"] = correct_count
+            checkpoint["progress"][str(i)][pair_key]["correct_count"] = correct_count
 
             # Write checkpoint after each trial.
             save_checkpoint(checkpoint)
