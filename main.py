@@ -213,7 +213,10 @@ for i in range(MIN_DIGITS, MAX_DIGITS + 1):
         accuracy_matrix[i - 1, j - 1] = accuracy
 
 # ---------------------------------------------------------------------
-# 4. Store final results to disk
+# 4. Store final results to disk and clean up
 # ---------------------------------------------------------------------
 
 write_results_to_file(accuracy_matrix)
+
+# Delete the checkpoint file
+os.remove(CHECKPOINT_FILE)
